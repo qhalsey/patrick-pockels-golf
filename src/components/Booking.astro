@@ -1,0 +1,306 @@
+---
+const services = [
+  { key: 'single',   label: '60-Minute Lesson',  price: '$150',   meta: 'Single session' },
+  { key: 'five-pack', label: '5-Lesson Pack',    price: '$750',   meta: 'Most popular' },
+  { key: 'ten-pack',  label: '10-Lesson Pack',   price: '$1,000', meta: 'Best value' },
+];
+
+// Typical lesson windows at Meadowlark — used to render slot options.
+const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:30 PM', '4:00 PM', '5:30 PM'];
+---
+
+<section id="book" class="py-24 bg-gray-50 border-y border-gray-100">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center">
+      <p class="uppercase tracking-[0.2em] text-xs text-brand-800 mb-4">Book a Lesson</p>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900">
+        Pick a time that works for you.
+      </h2>
+      <p class="mt-4 text-gray-600 max-w-xl mx-auto">
+        Choose your lesson type, pick a day, and send Patrick your preferred time.
+        You'll get a personal confirmation within a few hours.
+      </p>
+    </div>
+
+    <!-- ===========================================================
+         BOOKING WIDGET
+         Current state: client-side mock that opens a prefilled email
+         so the demo shows the booking flow.
+
+         To swap in Calendly when Patrick has an account:
+           1. Delete the <div id="booking-mock"> block below
+           2. Paste the Calendly inline embed snippet in its place
+           3. See PATRICK_TODO.md for exact instructions
+         =========================================================== -->
+    <div id="booking-mock" class="mt-12 rounded-2xl bg-white shadow-xl ring-1 ring-gray-200 overflow-hidden">
+
+      <!-- Step 1 — service -->
+      <div class="p-6 sm:p-8 border-b border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-7 h-7 rounded-full bg-brand-800 text-white text-sm font-semibold flex items-center justify-center">1</span>
+          <h3 class="text-lg font-semibold text-gray-900">Choose your lesson</h3>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-3" data-service-group>
+          {services.map((svc, i) => (
+            <button
+              type="button"
+              data-service-option={svc.key}
+              data-service-label={svc.label}
+              aria-pressed={i === 0 ? 'true' : 'false'}
+              class:list={[
+                'text-left p-4 rounded-lg border-2 transition',
+                i === 0
+                  ? 'border-brand-800 bg-brand-50'
+                  : 'border-gray-200 bg-white hover:border-gray-300',
+              ]}
+            >
+              <div class="flex items-baseline justify-between gap-2">
+                <span class="font-semibold text-gray-900 text-sm">{svc.label}</span>
+                <span class="text-xs text-gray-500">{svc.meta}</span>
+              </div>
+              <div class="mt-2 text-2xl font-semibold text-brand-800">{svc.price}</div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Step 2 — date -->
+      <div class="p-6 sm:p-8 border-b border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-7 h-7 rounded-full bg-brand-800 text-white text-sm font-semibold flex items-center justify-center">2</span>
+          <h3 class="text-lg font-semibold text-gray-900">Pick a date</h3>
+        </div>
+        <div
+          class="grid grid-cols-4 sm:grid-cols-7 gap-2"
+          data-date-group
+          aria-label="Available dates over the next week"
+        >
+          <!-- date buttons rendered by client script -->
+        </div>
+      </div>
+
+      <!-- Step 3 — time -->
+      <div class="p-6 sm:p-8 border-b border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-7 h-7 rounded-full bg-brand-800 text-white text-sm font-semibold flex items-center justify-center">3</span>
+          <h3 class="text-lg font-semibold text-gray-900">Pick a time</h3>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" data-time-group>
+          {timeSlots.map((slot, i) => (
+            <button
+              type="button"
+              data-time-option={slot}
+              aria-pressed={i === 1 ? 'true' : 'false'}
+              class:list={[
+                'px-3 py-2.5 rounded-md text-sm font-medium border transition',
+                i === 1
+                  ? 'border-brand-800 bg-brand-800 text-white'
+                  : 'border-gray-200 bg-white text-gray-700 hover:border-brand-800 hover:text-brand-800',
+              ]}
+            >
+              {slot}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Step 4 — submit -->
+      <div class="p-6 sm:p-8 bg-gray-50">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div class="text-sm text-gray-600">
+            Your selection:
+            <span data-summary class="block sm:inline font-medium text-gray-900 mt-1 sm:mt-0 sm:ml-1">
+              60-Minute Lesson, today, 8:30 AM
+            </span>
+          </div>
+          <a
+            href="mailto:patrickpockelsgolf@gmail.com"
+            data-book-button
+            class="inline-flex justify-center items-center px-6 py-3 rounded-md bg-brand-800 text-white font-medium hover:bg-brand-900 transition shadow-md"
+          >
+            Request this slot →
+          </a>
+        </div>
+        <p class="mt-4 text-xs text-gray-500">
+          Sends Patrick an email with your selection. He'll text or email back to confirm
+          within a few hours. Online self-serve booking + payment is coming soon.
+        </p>
+      </div>
+    </div>
+
+    <p class="mt-6 text-center text-xs text-gray-500">
+      Prefer to just talk? Email
+      <a href="mailto:patrickpockelsgolf@gmail.com" class="text-brand-800 hover:underline">
+        patrickpockelsgolf@gmail.com
+      </a>
+      or text
+      <a href="tel:+17145913924" class="text-brand-800 hover:underline">(714) 591-3924</a>.
+    </p>
+  </div>
+</section>
+
+<script>
+  const wrapper = document.getElementById('booking-mock');
+  if (wrapper) {
+    const serviceGroup = wrapper.querySelector<HTMLElement>('[data-service-group]');
+    const dateGroup    = wrapper.querySelector<HTMLElement>('[data-date-group]');
+    const timeGroup    = wrapper.querySelector<HTMLElement>('[data-time-group]');
+    const summary      = wrapper.querySelector<HTMLElement>('[data-summary]');
+    const bookButton   = wrapper.querySelector<HTMLAnchorElement>('[data-book-button]');
+
+    type State = { service: string; serviceLabel: string; dateIso: string; dateLabel: string; time: string };
+    const state: State = {
+      service: 'single',
+      serviceLabel: '60-Minute Lesson',
+      dateIso: '',
+      dateLabel: 'today',
+      time: '8:30 AM',
+    };
+
+    // ---------- render dates (next 7 days starting today) ----------
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(today);
+      d.setDate(today.getDate() + i);
+
+      const iso = d.toISOString().slice(0, 10);
+      const niceLabel = `${dayNames[d.getDay()]} ${monthNames[d.getMonth()]} ${d.getDate()}`;
+      const isToday = i === 0;
+      const isSelected = i === 0;
+
+      if (isToday) state.dateIso = iso;
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.dataset.dateOption = iso;
+      btn.dataset.dateLabel = isToday ? `today (${niceLabel})` : niceLabel;
+      btn.setAttribute('aria-pressed', String(isSelected));
+      btn.className = [
+        'flex flex-col items-center py-3 rounded-lg border-2 transition',
+        isSelected
+          ? 'border-brand-800 bg-brand-50'
+          : 'border-gray-200 bg-white hover:border-gray-300',
+      ].join(' ');
+      btn.innerHTML = `
+        <span class="text-[11px] uppercase tracking-wider text-gray-500">${dayNames[d.getDay()]}</span>
+        <span class="text-xl font-semibold text-gray-900 mt-1">${d.getDate()}</span>
+        <span class="text-[10px] text-gray-400 mt-0.5">${isToday ? 'Today' : monthNames[d.getMonth()]}</span>
+      `;
+      dateGroup?.appendChild(btn);
+    }
+
+    // ---------- selection helpers ----------
+    function selectIn(group: HTMLElement | null, attr: string, value: string) {
+      if (!group) return;
+      group.querySelectorAll<HTMLButtonElement>(`[${attr}]`).forEach((b) => {
+        const isMatch = b.getAttribute(attr) === value;
+        b.setAttribute('aria-pressed', String(isMatch));
+      });
+    }
+
+    function paintService(group: HTMLElement | null) {
+      if (!group) return;
+      group.querySelectorAll<HTMLButtonElement>('[data-service-option]').forEach((b) => {
+        const sel = b.getAttribute('aria-pressed') === 'true';
+        b.className = [
+          'text-left p-4 rounded-lg border-2 transition',
+          sel ? 'border-brand-800 bg-brand-50' : 'border-gray-200 bg-white hover:border-gray-300',
+        ].join(' ');
+      });
+    }
+    function paintDate(group: HTMLElement | null) {
+      if (!group) return;
+      group.querySelectorAll<HTMLButtonElement>('[data-date-option]').forEach((b) => {
+        const sel = b.getAttribute('aria-pressed') === 'true';
+        b.className = [
+          'flex flex-col items-center py-3 rounded-lg border-2 transition',
+          sel ? 'border-brand-800 bg-brand-50' : 'border-gray-200 bg-white hover:border-gray-300',
+        ].join(' ');
+      });
+    }
+    function paintTime(group: HTMLElement | null) {
+      if (!group) return;
+      group.querySelectorAll<HTMLButtonElement>('[data-time-option]').forEach((b) => {
+        const sel = b.getAttribute('aria-pressed') === 'true';
+        b.className = [
+          'px-3 py-2.5 rounded-md text-sm font-medium border transition',
+          sel
+            ? 'border-brand-800 bg-brand-800 text-white'
+            : 'border-gray-200 bg-white text-gray-700 hover:border-brand-800 hover:text-brand-800',
+        ].join(' ');
+      });
+    }
+
+    function refresh() {
+      if (summary) {
+        summary.textContent = `${state.serviceLabel}, ${state.dateLabel}, ${state.time}`;
+      }
+      if (bookButton) {
+        const subject = `Lesson request: ${state.serviceLabel} on ${state.dateLabel} @ ${state.time}`;
+        const body =
+          `Hi Patrick,\n\nI'd like to book:\n\n` +
+          `  Lesson:  ${state.serviceLabel}\n` +
+          `  Date:    ${state.dateLabel}\n` +
+          `  Time:    ${state.time}\n\n` +
+          `My name: \nPhone:   \n\nThanks!\n`;
+        bookButton.href = `mailto:patrickpockelsgolf@gmail.com?subject=${encodeURIComponent(
+          subject
+        )}&body=${encodeURIComponent(body)}`;
+      }
+    }
+
+    // ---------- listeners ----------
+    serviceGroup?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-service-option]');
+      if (!btn) return;
+      state.service = btn.dataset.serviceOption || state.service;
+      state.serviceLabel = btn.dataset.serviceLabel || state.serviceLabel;
+      selectIn(serviceGroup, 'data-service-option', state.service);
+      paintService(serviceGroup);
+      refresh();
+    });
+
+    dateGroup?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-date-option]');
+      if (!btn) return;
+      state.dateIso = btn.dataset.dateOption || state.dateIso;
+      state.dateLabel = btn.dataset.dateLabel || state.dateLabel;
+      selectIn(dateGroup, 'data-date-option', state.dateIso);
+      paintDate(dateGroup);
+      refresh();
+    });
+
+    timeGroup?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-time-option]');
+      if (!btn) return;
+      state.time = btn.dataset.timeOption || state.time;
+      selectIn(timeGroup, 'data-time-option', state.time);
+      paintTime(timeGroup);
+      refresh();
+    });
+
+    // ---------- deep links from Services section ("Book the 5-pack" etc.) ----------
+    document.querySelectorAll<HTMLAnchorElement>('[data-booking-trigger]').forEach((a) => {
+      a.addEventListener('click', () => {
+        const key = a.dataset.service;
+        if (!key) return;
+        const target = serviceGroup?.querySelector<HTMLButtonElement>(
+          `[data-service-option="${key}"]`
+        );
+        if (target) {
+          state.service = key;
+          state.serviceLabel = target.dataset.serviceLabel || state.serviceLabel;
+          selectIn(serviceGroup, 'data-service-option', state.service);
+          paintService(serviceGroup);
+          refresh();
+        }
+      });
+    });
+
+    refresh();
+  }
+</script>

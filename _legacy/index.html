@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Patrick Pockels Golf — Private Instruction at Meadowlark Golf Course</title>
+  <meta name="description" content="Private golf instruction with Patrick Pockels at Meadowlark Golf Course in Huntington Beach, CA. 5+ years teaching, 20+ years playing. Book a lesson today." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: { brand: { DEFAULT: '#065F46', dark: '#064E3B', light: '#10B981' } },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+  </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- ============ NAV ============ -->
+  <header class="fixed top-0 inset-x-0 z-40 bg-white/90 backdrop-blur border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#top" class="font-semibold tracking-tight text-gray-900">
+        Patrick Pockels <span class="text-brand">Golf</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm text-gray-600">
+        <a href="#about" class="hover:text-gray-900">About</a>
+        <a href="#services" class="hover:text-gray-900">Lessons</a>
+        <a href="#testimonials" class="hover:text-gray-900">Testimonials</a>
+        <a href="#contact" class="hover:text-gray-900">Contact</a>
+      </div>
+      <a href="#book" class="inline-flex items-center px-4 py-2 rounded-md bg-brand text-white text-sm font-medium hover:bg-brand-dark transition">
+        Book a Lesson
+      </a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="top" class="relative min-h-[92vh] flex items-center pt-16">
+    <!-- TODO: replace bg image with a Patrick photo or course shot -->
+    <div class="absolute inset-0 -z-10">
+      <img
+        src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=2000&q=80"
+        alt="Golf course at sunrise"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 py-24 text-white">
+      <p class="uppercase tracking-[0.2em] text-xs text-emerald-300 mb-4">Private Golf Instruction</p>
+      <h1 class="text-5xl md:text-7xl font-semibold leading-tight tracking-tight max-w-3xl">
+        Lower scores.<br/>Built shot by shot.
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-gray-200 max-w-xl">
+        One-on-one coaching with Patrick Pockels at Meadowlark Golf Course in Huntington Beach.
+        For beginners through single-digit handicaps.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#book" class="inline-flex items-center px-6 py-3 rounded-md bg-brand text-white font-medium hover:bg-brand-dark transition">
+          Book a Lesson
+        </a>
+        <a href="#about" class="inline-flex items-center px-6 py-3 rounded-md bg-white/10 backdrop-blur border border-white/20 text-white font-medium hover:bg-white/20 transition">
+          Meet Patrick
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div class="order-2 md:order-1">
+        <p class="uppercase tracking-[0.2em] text-xs text-brand mb-4">About</p>
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900">
+          A coach who's lived inside the game.
+        </h2>
+        <div class="mt-6 space-y-4 text-gray-700 leading-relaxed">
+          <p>
+            Patrick Pockels has been playing competitive golf for over <strong>20 years</strong> and teaching for the last <strong>five</strong>.
+            He's spent that time figuring out what actually moves the needle for amateur golfers — and what's just noise.
+          </p>
+          <p>
+            He's competed at the highest amateur and pro-am levels, including the
+            <strong>Valero PGA Tournament</strong> and the
+            <strong>59th Southern California Open Championship in 2022</strong>.
+            That tournament experience translates directly into the way he coaches:
+            no fluff, no swing-of-the-month theories — just what holds up under pressure.
+          </p>
+          <p>
+            Lessons are built around your game, your tendencies, and your goals.
+            Whether you're trying to break 100 or break par, the path is the same: clear feedback, repeatable mechanics, and on-course strategy that actually scores.
+          </p>
+        </div>
+
+        <dl class="mt-10 grid grid-cols-3 gap-6 max-w-md">
+          <div>
+            <dt class="text-3xl font-semibold text-brand">20+</dt>
+            <dd class="text-sm text-gray-600 mt-1">Years playing</dd>
+          </div>
+          <div>
+            <dt class="text-3xl font-semibold text-brand">5</dt>
+            <dd class="text-sm text-gray-600 mt-1">Years coaching</dd>
+          </div>
+          <div>
+            <dt class="text-3xl font-semibold text-brand">100s</dt>
+            <dd class="text-sm text-gray-600 mt-1">Lessons taught</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="order-1 md:order-2">
+        <!-- TODO: replace with a real headshot of Patrick -->
+        <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-gray-100 shadow-xl">
+          <img
+            src="https://images.unsplash.com/photo-1530028828-25e8270793c5?auto=format&fit=crop&w=1000&q=80"
+            alt="Golfer at address — placeholder until Patrick's headshot is added"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES / PRICING ============ -->
+  <section id="services" class="py-24 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl">
+        <p class="uppercase tracking-[0.2em] text-xs text-brand mb-4">Lessons & Pricing</p>
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900">
+          Pick the plan that matches your commitment.
+        </h2>
+        <p class="mt-4 text-gray-600">
+          Every lesson is one hour, one-on-one, at Meadowlark Golf Course.
+          Packages are the best value if you're serious about lowering your scores.
+        </p>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-6">
+        <!-- Single -->
+        <div class="rounded-2xl bg-white border border-gray-200 p-8 flex flex-col">
+          <h3 class="text-lg font-semibold text-gray-900">Single Lesson</h3>
+          <p class="mt-2 text-gray-600 text-sm">Try a session, work on a specific issue, or stay sharp.</p>
+          <div class="mt-6">
+            <span class="text-4xl font-semibold text-gray-900">$150</span>
+            <span class="text-gray-500"> / hour</span>
+          </div>
+          <ul class="mt-6 space-y-2 text-sm text-gray-700 flex-1">
+            <li>• 60-minute private lesson</li>
+            <li>• Full-swing, short game, or putting</li>
+            <li>• Video feedback on request</li>
+          </ul>
+          <a href="#book" class="mt-8 inline-flex justify-center items-center px-5 py-3 rounded-md bg-gray-900 text-white text-sm font-medium hover:bg-black transition">
+            Book a single lesson
+          </a>
+        </div>
+
+        <!-- 5-pack (highlighted) -->
+        <div class="rounded-2xl bg-brand text-white p-8 flex flex-col shadow-xl ring-1 ring-brand-dark relative">
+          <span class="absolute -top-3 right-6 bg-emerald-300 text-emerald-900 text-xs font-semibold px-3 py-1 rounded-full">
+            Most popular
+          </span>
+          <h3 class="text-lg font-semibold">5-Lesson Pack</h3>
+          <p class="mt-2 text-emerald-100 text-sm">Buy 5, get the 6th free. Real progress takes reps.</p>
+          <div class="mt-6">
+            <span class="text-4xl font-semibold">$750</span>
+            <span class="text-emerald-200"> / 6 lessons</span>
+          </div>
+          <ul class="mt-6 space-y-2 text-sm text-emerald-50 flex-1">
+            <li>• 6 × 60-minute private lessons</li>
+            <li>• One free lesson included</li>
+            <li>• Lesson plan tailored to your game</li>
+            <li>• Between-lesson drills</li>
+          </ul>
+          <a href="#book" class="mt-8 inline-flex justify-center items-center px-5 py-3 rounded-md bg-white text-brand text-sm font-semibold hover:bg-emerald-50 transition">
+            Book the 5-pack
+          </a>
+        </div>
+
+        <!-- 10-pack -->
+        <div class="rounded-2xl bg-white border border-gray-200 p-8 flex flex-col">
+          <h3 class="text-lg font-semibold text-gray-900">10-Lesson Pack</h3>
+          <p class="mt-2 text-gray-600 text-sm">The fast track. Best per-lesson value for serious players.</p>
+          <div class="mt-6">
+            <span class="text-4xl font-semibold text-gray-900">$1,000</span>
+            <span class="text-gray-500"> / 10 lessons</span>
+          </div>
+          <ul class="mt-6 space-y-2 text-sm text-gray-700 flex-1">
+            <li>• 10 × 60-minute private lessons</li>
+            <li>• $100/lesson — best rate</li>
+            <li>• Long-term coaching plan</li>
+            <li>• On-course playing lesson included</li>
+          </ul>
+          <a href="#book" class="mt-8 inline-flex justify-center items-center px-5 py-3 rounded-md bg-gray-900 text-white text-sm font-medium hover:bg-black transition">
+            Book the 10-pack
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section id="testimonials" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl">
+        <p class="uppercase tracking-[0.2em] text-xs text-brand mb-4">What Students Say</p>
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900">
+          Results, in their words.
+        </h2>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-6">
+
+        <!-- Real testimonial: Quentin -->
+        <figure class="rounded-2xl border border-gray-200 p-8 bg-white">
+          <svg class="w-8 h-8 text-brand mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5A1.67 1.67 0 017.17 9.5V6zm10 0a5.17 5.17 0 00-5.17 5.17V18h6.83v-6.83H15.5a1.67 1.67 0 011.67-1.67V6z"/></svg>
+          <blockquote class="text-gray-800 leading-relaxed">
+            "Patrick took me from shooting mid 80's to low 90's consistently to breaking 80 in a month,
+            and a single digit handicap in 2 months. Incredibly knowledgeable, and responsive."
+          </blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center text-brand font-semibold">Q</div>
+            <div>
+              <div class="text-sm font-semibold text-gray-900">Quentin H.</div>
+              <div class="text-xs text-gray-500">Single-digit handicap</div>
+            </div>
+          </figcaption>
+        </figure>
+
+        <!-- TODO: replace with real testimonial -->
+        <figure class="rounded-2xl border border-dashed border-gray-300 p-8 bg-gray-50">
+          <span class="inline-block text-[10px] uppercase tracking-widest text-amber-700 bg-amber-100 px-2 py-0.5 rounded mb-4">Placeholder — replace</span>
+          <blockquote class="text-gray-700 leading-relaxed italic">
+            "Add a real testimonial here. Two to three sentences works best — what was the student's level before, what changed, and what made Patrick's coaching effective."
+          </blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-semibold">?</div>
+            <div>
+              <div class="text-sm font-semibold text-gray-700">Student Name</div>
+              <div class="text-xs text-gray-500">Short context (e.g. "Beginner, breaking 100")</div>
+            </div>
+          </figcaption>
+        </figure>
+
+        <!-- TODO: replace with real testimonial -->
+        <figure class="rounded-2xl border border-dashed border-gray-300 p-8 bg-gray-50">
+          <span class="inline-block text-[10px] uppercase tracking-widest text-amber-700 bg-amber-100 px-2 py-0.5 rounded mb-4">Placeholder — replace</span>
+          <blockquote class="text-gray-700 leading-relaxed italic">
+            "Add a second real testimonial here. Specific results (handicap drops, scores broken, swing fixes) land harder than generic praise."
+          </blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-semibold">?</div>
+            <div>
+              <div class="text-sm font-semibold text-gray-700">Student Name</div>
+              <div class="text-xs text-gray-500">Short context</div>
+            </div>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOOKING ============ -->
+  <section id="book" class="py-24 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="uppercase tracking-[0.2em] text-xs text-brand mb-4">Book a Lesson</p>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900">
+        Pick a time that works for you.
+      </h2>
+      <p class="mt-4 text-gray-600 max-w-xl mx-auto">
+        Calendar updates in real time based on Patrick's availability at Meadowlark.
+        You'll get an email confirmation and reminder before your lesson.
+      </p>
+
+      <!-- ============================================================
+           TODO (Patrick): replace data-url with your real Calendly URL
+           Steps:
+             1. Sign up free at calendly.com
+             2. Connect your Google Calendar
+             3. Create an event type called "Golf Lesson — 60 min"
+             4. Copy the URL (e.g. https://calendly.com/patrickpockelsgolf/lesson)
+             5. Paste it into data-url below
+           ============================================================ -->
+      <div class="mt-12 calendly-inline-widget"
+           data-url="https://calendly.com/patrickpockelsgolf/lesson"
+           style="min-width:320px; height:720px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+      <p class="mt-6 text-xs text-gray-500">
+        Trouble booking? Email
+        <a href="mailto:patrickpockelsgolf@gmail.com" class="text-brand hover:underline">patrickpockelsgolf@gmail.com</a>
+        or text <a href="tel:+17145913924" class="text-brand hover:underline">(714) 591-3924</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+      <div>
+        <p class="uppercase tracking-[0.2em] text-xs text-brand mb-4">Contact</p>
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900">
+          Questions before you book?
+        </h2>
+        <p class="mt-4 text-gray-600">
+          Patrick answers every message personally. Reach out about lesson formats, gift packages,
+          group instruction, or anything else.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-md bg-brand/10 text-brand flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm text-gray-500">Email</div>
+            <a href="mailto:patrickpockelsgolf@gmail.com" class="text-gray-900 font-medium hover:text-brand">
+              patrickpockelsgolf@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-md bg-brand/10 text-brand flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.515l.7 2.79a2 2 0 01-.5 1.86L8.09 10.91a11.05 11.05 0 005 5l1.745-1.33a2 2 0 011.86-.5l2.79.7A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm text-gray-500">Phone / Text</div>
+            <a href="tel:+17145913924" class="text-gray-900 font-medium hover:text-brand">
+              (714) 591-3924
+            </a>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-md bg-brand/10 text-brand flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm text-gray-500">Where</div>
+            <div class="text-gray-900 font-medium">
+              Meadowlark Golf Course<br/>
+              Huntington Beach, CA 92649
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-gray-900 text-gray-400">
+    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+      <div>
+        &copy; <span id="year"></span> Patrick Pockels Golf. All rights reserved.
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#about" class="hover:text-white">About</a>
+        <a href="#services" class="hover:text-white">Lessons</a>
+        <a href="#book" class="hover:text-white">Book</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
