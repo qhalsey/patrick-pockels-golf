@@ -22,3 +22,6 @@ pnpm-debug.log*
 .vscode/
 .idea/
 Thumbs.db
+
+# private notes — Quentin's working context, not for git
+_internal/
