@@ -1,0 +1,59 @@
+Since your buddy isn't technical and you’re doing this as a favor, the goal is **high impact with zero maintenance.** You want a "set it and forget it" system that looks like a premium country club brand but runs like a simple utility.
+
+Given he has great photos and 10 testimonials, you have the "soul" of the site already. Here is the best path to get him on solid footing without you becoming his lifetime IT department.
+
+---
+
+## 1. The Platform: Squarespace (The "Sleek Professional")
+For a golf instructor, **Squarespace** is the clear winner over Wix or WordPress. 
+* **The "Guardrails":** It’s harder to make a Squarespace site look "ugly" or "broken." Since he has high-quality photos, Squarespace’s design-forward templates will make him look like a pro who charges \$150/hour rather than a beginner.
+* **All-in-One:** It handles the domain, hosting, and security. No plugins to update or "white screens of death."
+* **The AI Builder:** In 2026, their "Blueprint AI" can scaffold the site in minutes based on his photos and testimonials.
+
+## 2. The Engine: Squarespace Scheduling (Acuity)
+Do not build a custom booking system. Squarespace has **Acuity Scheduling** built right in. It’s a "pro-level" tool that handles everything you mentioned:
+* **Calendar Sync:** It hooks into his Google or Apple Calendar so he never gets double-booked.
+* **Payments:** Integrates with Stripe or PayPal. He can require payment upfront (highly recommended for new instructors to prevent no-shows).
+* **Automated Reminders:** It sends professional "See you tomorrow at 10 AM" texts/emails automatically.
+* **Packages & Coupons:** This is huge for filling a calendar. He can sell a "5-Lesson Bundle" for a discount, and the system tracks how many lessons are left automatically.
+
+---
+
+## 3. The "Fill the Calendar" Strategy
+To get him booked ASAP, the website needs to be a **Conversion Machine**, not just a digital brochure. Focus on these three elements:
+
+### The "Introductory Offer"
+Create a specific booking type called the **"First Swing Assessment."** > * **Price:** $50 (or a 30% discount).
+> * **Goal:** Lower the barrier to entry. Once they are on the lesson tee with him, it's much easier to upsell them to a 10-lesson package.
+
+### Social Proof (The Testimonials)
+Don't just put the testimonials on a separate page. Scatter them:
+* Put one right under the "Book Now" button.
+* Put one next to his "About Me" photo.
+* Use a "Wall of Love" section toward the bottom of the homepage.
+
+### The "Referral Engine"
+Set up a simple discount code (e.g., `FRIEND20`) in the scheduling tool. Tell him to give this code to his first 5 clients to share with their golf buddies.
+
+---
+
+## 4. The Site Map (Keep it to One Page)
+To keep maintenance low, build a **"Long-Form One-Pager."** It’s easier for users on mobile (who are likely at the driving range) to just scroll.
+
+| Section | Content Focus |
+| :--- | :--- |
+| **Hero** | A high-quality photo of him coaching + "Master Your Game" + **Big "Book a Lesson" Button.** |
+| **The Problem** | "Stuck at a 15 handicap? Slicing your driver?" (Relatability). |
+| **The Solution** | His philosophy + 3 key benefits (e.g., Simple Drills, Video Analysis, Real Results). |
+| **Testimonials** | 3-4 of the strongest quotes with photos of the students if possible. |
+| **Pricing/Booking** | Clear cards: Single Lesson, 5-Lesson Pack, Junior Lessons. |
+| **Contact/Bio** | A short bio + his location (which course/range he teaches at). |
+
+---
+
+## 5. Pro Tip for the "Handoff"
+Since he’s not technical, do these two things before you "give him the keys":
+1.  **Generate a QR Code:** Use a free generator to link directly to his booking page. Have him print this on a 5x7 acrylic sign to put on the table at the driving range. It’s the fastest way to turn a "looker" into a "booker."
+2.  **Mobile App:** Have him download the **Squarespace App** on his phone. He can check his schedule, see who paid, and even edit text on the site without needing a computer.
+
+**One quick question to help refine this:** Does he have a specific "niche" yet (e.g., total beginners, high-school athletes, or seniors), or is he taking anyone with a club right now?

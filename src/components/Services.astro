@@ -1,0 +1,115 @@
+---
+const services = [
+  {
+    name: 'Single Lesson',
+    tagline: 'Try a session, work on a specific issue, or stay sharp.',
+    price: '$150',
+    suffix: '/ hour',
+    bullets: [
+      '60-minute private lesson',
+      'Full-swing, short game, or putting',
+      'Video feedback on request',
+    ],
+    cta: 'Book a single lesson',
+    highlight: false,
+    serviceKey: 'single',
+  },
+  {
+    name: '5-Lesson Pack',
+    tagline: 'Buy 5, get the 6th free. Real progress takes reps.',
+    price: '$750',
+    suffix: '/ 6 lessons',
+    bullets: [
+      '6 × 60-minute private lessons',
+      'One free lesson included',
+      'Lesson plan tailored to your game',
+      'Between-lesson drills',
+    ],
+    cta: 'Book the 5-pack',
+    highlight: true,
+    serviceKey: 'five-pack',
+  },
+  {
+    name: '10-Lesson Pack',
+    tagline: 'The fast track. Best per-lesson value for serious players.',
+    price: '$1,000',
+    suffix: '/ 10 lessons',
+    bullets: [
+      '10 × 60-minute private lessons',
+      '$100/lesson — best rate',
+      'Long-term coaching plan',
+      'On-course playing lesson included',
+    ],
+    cta: 'Book the 10-pack',
+    highlight: false,
+    serviceKey: 'ten-pack',
+  },
+];
+---
+
+<section id="services" class="py-24 bg-gray-50 border-y border-gray-100">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-2xl">
+      <p class="uppercase tracking-[0.2em] text-xs text-brand-800 mb-4">Lessons &amp; Pricing</p>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900">
+        Pick the plan that matches your commitment.
+      </h2>
+      <p class="mt-4 text-gray-600">
+        Every lesson is one hour, one-on-one, at Meadowlark Golf Course. Packages are the best value if
+        you're serious about lowering your scores.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-6">
+      {services.map((svc) => (
+        <div
+          class:list={[
+            'rounded-2xl p-8 flex flex-col relative',
+            svc.highlight
+              ? 'bg-brand-800 text-white shadow-xl ring-1 ring-brand-900'
+              : 'bg-white border border-gray-200',
+          ]}
+        >
+          {svc.highlight && (
+            <span class="absolute -top-3 right-6 bg-brand-300 text-brand-900 text-xs font-semibold px-3 py-1 rounded-full">
+              Most popular
+            </span>
+          )}
+          <h3 class:list={['text-lg font-semibold', svc.highlight ? 'text-white' : 'text-gray-900']}>
+            {svc.name}
+          </h3>
+          <p class:list={['mt-2 text-sm', svc.highlight ? 'text-brand-100' : 'text-gray-600']}>
+            {svc.tagline}
+          </p>
+          <div class="mt-6">
+            <span class:list={['text-4xl font-semibold', svc.highlight ? 'text-white' : 'text-gray-900']}>
+              {svc.price}
+            </span>
+            <span class:list={[svc.highlight ? 'text-brand-200' : 'text-gray-500']}> {svc.suffix}</span>
+          </div>
+          <ul
+            class:list={[
+              'mt-6 space-y-2 text-sm flex-1',
+              svc.highlight ? 'text-brand-50' : 'text-gray-700',
+            ]}
+          >
+            {svc.bullets.map((b) => <li>• {b}</li>)}
+          </ul>
+          <a
+            href={`#book?service=${svc.serviceKey}`}
+            data-service={svc.serviceKey}
+            data-booking-trigger
+            class:list={[
+              'mt-8 inline-flex justify-center items-center px-5 py-3 rounded-md text-sm font-medium transition',
+              svc.highlight
+                ? 'bg-white text-brand-800 hover:bg-brand-50'
+                : 'bg-gray-900 text-white hover:bg-black',
+            ]}
+          >
+            {svc.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,91 @@
+---
+const testimonials = [
+  {
+    quote:
+      "Patrick took me from shooting mid 80's to low 90's consistently to breaking 80 in a month, and a single digit handicap in 2 months. Incredibly knowledgeable, and responsive.",
+    name: 'Quentin H.',
+    context: 'Single-digit handicap',
+    initial: 'Q',
+    placeholder: false,
+  },
+  {
+    quote:
+      'Add a real testimonial here. Two to three sentences works best — what was the student\'s level before, what changed, and what made Patrick\'s coaching effective.',
+    name: 'Student Name',
+    context: 'Short context (e.g. "Beginner, breaking 100")',
+    initial: '?',
+    placeholder: true,
+  },
+  {
+    quote:
+      'Add a second real testimonial here. Specific results (handicap drops, scores broken, swing fixes) land harder than generic praise.',
+    name: 'Student Name',
+    context: 'Short context',
+    initial: '?',
+    placeholder: true,
+  },
+];
+---
+
+<section id="testimonials" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-2xl">
+      <p class="uppercase tracking-[0.2em] text-xs text-brand-800 mb-4">What Students Say</p>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900">
+        Results, in their words.
+      </h2>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-6">
+      {testimonials.map((t) => (
+        <figure
+          class:list={[
+            'rounded-2xl p-8',
+            t.placeholder
+              ? 'border border-dashed border-gray-300 bg-gray-50'
+              : 'border border-gray-200 bg-white',
+          ]}
+        >
+          {t.placeholder && (
+            <span class="inline-block text-[10px] uppercase tracking-widest text-amber-700 bg-amber-100 px-2 py-0.5 rounded mb-4">
+              Placeholder — replace
+            </span>
+          )}
+          {!t.placeholder && (
+            <svg class="w-8 h-8 text-brand-800 mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5A1.67 1.67 0 017.17 9.5V6zm10 0a5.17 5.17 0 00-5.17 5.17V18h6.83v-6.83H15.5a1.67 1.67 0 011.67-1.67V6z"
+              />
+            </svg>
+          )}
+          <blockquote
+            class:list={['leading-relaxed', t.placeholder ? 'text-gray-700 italic' : 'text-gray-800']}
+          >
+            "{t.quote}"
+          </blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <div
+              class:list={[
+                'w-10 h-10 rounded-full flex items-center justify-center font-semibold',
+                t.placeholder ? 'bg-gray-200 text-gray-500' : 'bg-brand-100 text-brand-800',
+              ]}
+            >
+              {t.initial}
+            </div>
+            <div>
+              <div
+                class:list={[
+                  'text-sm font-semibold',
+                  t.placeholder ? 'text-gray-700' : 'text-gray-900',
+                ]}
+              >
+                {t.name}
+              </div>
+              <div class="text-xs text-gray-500">{t.context}</div>
+            </div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
