@@ -46,10 +46,10 @@ const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:3
               type="button"
               data-service-option={svc.key}
               data-service-label={svc.label}
-              aria-pressed={i === 0 ? 'true' : 'false'}
+              aria-pressed={i === 1 ? 'true' : 'false'}
               class:list={[
                 'text-left p-4 rounded-lg border-2 transition',
-                i === 0
+                i === 1
                   ? 'border-brand-800 bg-brand-50'
                   : 'border-gray-200 bg-white hover:border-gray-300',
               ]}
@@ -110,7 +110,7 @@ const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:3
           <div class="text-sm text-gray-600">
             Your selection:
             <span data-summary class="block sm:inline font-medium text-gray-900 mt-1 sm:mt-0 sm:ml-1">
-              60-Minute Lesson, today, 8:30 AM
+              5-Lesson Pack, today, 8:30 AM
             </span>
           </div>
           <a
@@ -127,6 +127,13 @@ const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:3
         </p>
       </div>
     </div>
+
+    <p class="mt-6 text-sm text-gray-600 bg-brand-50/70 border border-brand-100 rounded-lg px-5 py-4">
+      <strong class="text-brand-900">Heads up:</strong> depending on the time slot, your lesson is either
+      outdoors at <strong>Meadowlark Golf Course</strong> or in Patrick's <strong>indoor simulator bay</strong>
+      (also in Huntington Beach). Patrick will confirm the location when he replies — both are great for the
+      same kind of work, just different vibes.
+    </p>
 
     <p class="mt-6 text-center text-xs text-gray-500">
       Prefer to just talk? Email
@@ -150,8 +157,8 @@ const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:3
 
     type State = { service: string; serviceLabel: string; dateIso: string; dateLabel: string; time: string };
     const state: State = {
-      service: 'single',
-      serviceLabel: '60-Minute Lesson',
+      service: 'five-pack',
+      serviceLabel: '5-Lesson Pack',
       dateIso: '',
       dateLabel: 'today',
       time: '8:30 AM',
