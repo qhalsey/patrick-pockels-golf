@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import aboutImg from '../assets/about-walking.jpg';
 ---
 
 <section id="about" class="py-24 bg-white">
@@ -16,7 +18,7 @@
         </p>
         <p>
           He's competed at the highest amateur and pro-am levels, including the
-          <strong>Valero PGA Tournament</strong> and the
+          <strong>Valero Texas Open</strong> and the
           <strong>59th Southern California Open Championship in 2022</strong>. That tournament experience
           translates directly into the way he coaches: no fluff, no swing-of-the-month theories — just what
           holds up under pressure.
@@ -45,12 +47,13 @@
     </div>
 
     <div class="order-1 md:order-2">
-      <!-- TODO(Patrick): replace src with your headshot -->
       <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-gray-100 shadow-xl">
-        <img
-          src="https://images.unsplash.com/photo-1530028828-25e8270793c5?auto=format&fit=crop&w=1000&q=80"
-          alt="Golfer at address — placeholder until Patrick's headshot is added"
+        <Image
+          src={aboutImg}
+          alt="Patrick Pockels walking the fairway in light rain, smiling, driver in hand"
           class="w-full h-full object-cover"
+          widths={[480, 720, 1000]}
+          sizes="(min-width: 768px) 500px, 100vw"
           loading="lazy"
         />
       </div>
