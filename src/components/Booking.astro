@@ -1,11 +1,11 @@
 ---
 const services = [
-  { key: 'single',   label: '60-Minute Lesson',  price: '$150',   meta: 'Single session' },
-  { key: 'five-pack', label: '5-Lesson Pack',    price: '$750',   meta: 'Most popular' },
-  { key: 'ten-pack',  label: '10-Lesson Pack',   price: '$1,000', meta: 'Best value' },
+  { key: 'range',     label: 'Meadowlark Range',  price: '$100', meta: '60 min · outdoors' },
+  { key: 'sim',       label: 'Simulator',         price: '$130', meta: '60 min · indoors' },
+  { key: 'on-course', label: 'On-Course 9-Hole',  price: '$150', meta: '~2 hr · 9 holes' },
 ];
 
-// Typical lesson windows at Meadowlark — used to render slot options.
+// Placeholder lesson windows — used to render slot options for the email-request stopgap.
 const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:30 PM', '4:00 PM', '5:30 PM'];
 ---
 
@@ -25,16 +25,17 @@ const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:3
     <!-- ===========================================================
          BOOKING WIDGET
          Current state: client-side mock that opens a prefilled email
-         so the demo shows the booking flow.
+         so visitors can request a slot.
 
-         To swap in Calendly when Patrick has an account:
-           1. Delete the <div id="booking-mock"> block below
-           2. Paste the Calendly inline embed snippet in its place
-           3. See PATRICK_TODO.md for exact instructions
+         Live Calendly scheduling is deferred — it needs Patrick's
+         event types configured (availability windows, on-course /
+         range overlap, simulator travel buffer). See PATRICK_TODO.md §1.
+         When that's verified, this block gets swapped for the Calendly
+         inline embeds.
          =========================================================== -->
     <div id="booking-mock" class="mt-12 rounded-2xl bg-white shadow-xl ring-1 ring-gray-200 overflow-hidden">
 
-      <!-- Step 1 — service -->
+      <!-- Step 1 — lesson type -->
       <div class="p-6 sm:p-8 border-b border-gray-100">
         <div class="flex items-center gap-3 mb-4">
           <span class="w-7 h-7 rounded-full bg-brand-800 text-white text-sm font-semibold flex items-center justify-center">1</span>
@@ -46,10 +47,10 @@ const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:3
               type="button"
               data-service-option={svc.key}
               data-service-label={svc.label}
-              aria-pressed={i === 1 ? 'true' : 'false'}
+              aria-pressed={i === 0 ? 'true' : 'false'}
               class:list={[
                 'text-left p-4 rounded-lg border-2 transition',
-                i === 1
+                i === 0
                   ? 'border-brand-800 bg-brand-50'
                   : 'border-gray-200 bg-white hover:border-gray-300',
               ]}
@@ -102,6 +103,9 @@ const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:3
             </button>
           ))}
         </div>
+        <p class="mt-3 text-xs text-gray-500">
+          Pick your ideal time — Patrick confirms the exact slot when he replies.
+        </p>
       </div>
 
       <!-- Step 4 — submit -->
@@ -110,7 +114,7 @@ const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:3
           <div class="text-sm text-gray-600">
             Your selection:
             <span data-summary class="block sm:inline font-medium text-gray-900 mt-1 sm:mt-0 sm:ml-1">
-              5-Lesson Pack, today, 8:30 AM
+              Meadowlark Range, today, 8:30 AM
             </span>
           </div>
           <a
@@ -123,18 +127,10 @@ const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:3
         </div>
         <p class="mt-4 text-xs text-gray-500">
           Sends Patrick an email with your selection. He'll text or email back to confirm
-          within a few hours. Online self-serve booking + payment is coming soon.
+          within a few hours. Online self-serve booking is coming soon.
         </p>
       </div>
     </div>
-
-    <p class="mt-6 text-sm text-gray-600 bg-brand-50/70 border border-brand-100 rounded-lg px-5 py-4">
-      <strong class="text-brand-900">Heads up:</strong> depending on the time slot, your lesson takes
-      place outdoors at <strong>Meadowlark Golf Course</strong> or indoors in a
-      <strong>state-of-the-art golf simulator</strong> with full launch-monitor data — spin rate, apex,
-      carry, and total distance on every swing (also in Huntington Beach). Patrick will confirm the
-      location when he replies. Both environments are built for serious lesson work.
-    </p>
 
     <p class="mt-6 text-center text-xs text-gray-500">
       Prefer to just talk? Email
@@ -142,7 +138,7 @@ const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:3
         patrickpockelsgolf@gmail.com
       </a>
       or text
-      <a href="tel:+17145913924" class="text-brand-800 hover:underline">(714) 591-3924</a>.
+      <a href="tel:+17145913934" class="text-brand-800 hover:underline">(714) 591-3934</a>.
     </p>
   </div>
 </section>
@@ -158,8 +154,8 @@ const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:3
 
     type State = { service: string; serviceLabel: string; dateIso: string; dateLabel: string; time: string };
     const state: State = {
-      service: 'five-pack',
-      serviceLabel: '5-Lesson Pack',
+      service: 'range',
+      serviceLabel: 'Meadowlark Range',
       dateIso: '',
       dateLabel: 'today',
       time: '8:30 AM',
@@ -291,7 +287,7 @@ const timeSlots = ['7:00 AM', '8:30 AM', '10:00 AM', '11:30 AM', '1:00 PM', '2:3
       refresh();
     });
 
-    // ---------- deep links from Services section ("Book the 5-pack" etc.) ----------
+    // ---------- deep links from Services section ("Book a range lesson" etc.) ----------
     document.querySelectorAll<HTMLAnchorElement>('[data-booking-trigger]').forEach((a) => {
       a.addEventListener('click', () => {
         const key = a.dataset.service;

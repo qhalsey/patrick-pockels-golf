@@ -1,36 +1,62 @@
 # Patrick's TODO — things only you can do
 
-The site is live and looking sharp, but five pieces are still placeholders or
-require you to create an account with your own identity. None of these are
-hard — most take 10–30 minutes each.
+The site is live and looking sharp. A few pieces still need you — either to
+verify a setting under your own account or to make a call only you can make.
+None of these are hard — most take 10–30 minutes each.
 
 When something is ready, just text Quentin and he'll swap it in.
 
 ---
 
-## 1. Set up Calendly (~20 min) — UNBLOCKS REAL BOOKING
+## 1. Calendly — configure your event types (FOCUSED WORK, next session)
 
-Right now the "Book a Lesson" section is a polished demo: people pick a
-service, day, and time, and click "Request this slot" — it opens an email
-to you with their selection. That works as a stopgap, but real Calendly
-gives you automatic confirmations, reminders, payment, and rescheduling.
+The "Book a Lesson" section is currently a polished stopgap: visitors pick a
+lesson type, day, and time, and click "Request this slot" to email you their
+choice. Real Calendly scheduling is the next piece of work — and before we
+wire it into the site, your three event types need to be configured correctly,
+because the availability rules live **inside Calendly, not on the website.**
 
-**Steps:**
-1. Sign up free at https://calendly.com
-2. Connect your **Google Calendar** so Calendly never double-books you
-3. Create an event type called **"Golf Lesson — 60 min"**
-   - Duration: 60 minutes
-   - Location: Meadowlark Golf Course
-   - Availability: when you actually teach
-4. *(Optional but recommended)* Connect Stripe under Calendly Settings →
-   Payments, then require a deposit per lesson. Cuts no-shows.
-5. Copy your event URL — it looks like
-   `https://calendly.com/patrickpockelsgolf/lesson`
-6. Send it to Quentin. He'll swap the mock for the real Calendly embed.
+You've created the three event types:
+
+- **Meadowlark Range** ($100) → `/1-hour-lesson`
+- **Simulator** ($130) → `/1-hour-lesson-simulator`
+- **On-Course 9-Hole** ($150) → `/9-hole-on-course-lesson`
+
+We'll go through this together next session, but here's what each one needs so
+the rules you described actually work:
+
+1. **Connect your Google Calendar** to all three event types (Calendly →
+   Settings → Calendar connection). This is what stops double-booking and
+   makes the rules below actually work.
+2. **On-Course 9-Hole** — set duration to **2 hours**, availability window
+   **5:00–6:30 PM** start times, on the days you offer it.
+3. **Meadowlark Range** — duration **60 min**, availability **9 AM–7 PM**.
+   Because on-course bookings sit on the same connected calendar, any
+   on-course lesson you take automatically blocks the overlapping range
+   times — so range effectively runs 9–5 on days you have an on-course
+   lesson, and 9–7 on days you don't. No extra setup needed.
+4. **Simulator** — duration **60 min**. Add a **30-minute "before event"
+   buffer** (Event type → scheduling settings → buffers) so the sim can't be
+   booked within 30 min of a range lesson — that's your travel time from the
+   course to the sim.
+5. *(Optional but recommended)* Connect Stripe under Calendly → Payments and
+   require a deposit per lesson. Cuts no-shows.
+
+> If you change any of the three event-type URLs, text Quentin so he can
+> update the links on the site.
 
 > Want even more (packages of 5/10 lessons, automatic SMS reminders, gift
 > certificates)? **Acuity** is Calendly's bigger sibling — same company,
 > ~$20/mo. Quentin can switch you over later if Calendly isn't enough.
+
+---
+
+## 1b. Decide which lesson packages to advertise (Patrick)
+
+The pricing section currently shows the three single-lesson types and a note
+that "multi-lesson packages are coming soon." When you've decided what blocks
+to offer (e.g. 5 lessons / 10 lessons, and at what price), tell Quentin and
+he'll add them to the pricing + booking.
 
 ---
 
@@ -49,20 +75,15 @@ Text or AirDrop them to Quentin. He'll compress + drop them in.
 
 ---
 
-## 3. Two more student testimonials
+## 3. ✅ Student testimonials — done
 
-There are currently three testimonial cards on the site:
-- ✅ Quentin H. (real)
-- ⏳ Placeholder card #1
-- ⏳ Placeholder card #2
+All three testimonial cards are now real students:
+- ✅ Quentin H.
+- ✅ Devan C.
+- ✅ Jason E.
 
-Pick **two students** who'd say something nice. Ask them for 2–3 sentences
-covering: where their game was before, what changed, what made the
-coaching work. First name + last initial is fine.
-
-Specific results land harder than generic praise:
-- ✅ *"My slice cost me two strokes a hole; we fixed it in three lessons."*
-- ❌ *"Patrick is a great coach."*
+Want to add or swap any later? Send Quentin 2–3 sentences (first name + last
+initial is fine) and he'll update the cards.
 
 ---
 
@@ -79,7 +100,7 @@ Huntington Beach" or asks Siri for one near them. Free.
 4. Service area: Huntington Beach + surrounding cities
 5. Address: Meadowlark Golf Course (or "service area only" if you'd rather
    not publish a physical address)
-6. Phone: (714) 591-3924
+6. Phone: (714) 591-3934
 7. Hours: when you take students
 8. Website: (Quentin will give you the URL once it's live)
 9. Add 5–10 photos (course, you teaching, students mid-swing)
